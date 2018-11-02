@@ -28,9 +28,13 @@ macro_rules! map_keys {
     }};
 }
 
+fn is_enclosed_with(line: &str, pattern: char) -> bool {
+    line.starts_with(pattern) && line.ends_with(pattern)
+}
+
 fn parse_line(line: &str, skip: usize) -> &str {
     let line = line[skip..].trim();
-    if line.starts_with('"') && line.ends_with('"') {
+    if is_enclosed_with(line, '"') || is_enclosed_with(line, '\'') {
         &line[1..line.len() - 1]
     } else {
         line
