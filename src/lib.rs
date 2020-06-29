@@ -452,7 +452,13 @@ UBUNTU_CODENAME=bionic
     fn os_release_nothing() {
         let os_release = OsRelease::from_iter(NOTHING.lines().map(|x| x.into()));
 
-        assert_eq!(os_release, OsRelease::default(),)
+        assert_eq!(os_release, OsRelease::default());
+        assert_eq!(os_release, OsRelease{
+            name: "Linux".into(),
+            pretty_name: "Linux".into(),
+            id: "linux".into(),
+            ..OsRelease::default()
+        })
     }
     const JUST_EXTRA: &str = "EXTRA=test";
     #[test]
