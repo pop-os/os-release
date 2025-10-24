@@ -46,40 +46,51 @@ fn parse_line(line: &str, skip: usize) -> &str {
 pub struct OsRelease {
     /// The URL where bugs should be reported for this OS.
     pub bug_report_url:     String,
+
     /// The homepage of this OS.
     pub home_url:           String,
+
     /// Identifier of the original upstream OS that this release is a derivative of.
     ///
-    /// **IE:** `debian`
+    /// **E.g.:** `debian`
     pub id_like:            String,
+
     /// An identifier which describes this release, such as `ubuntu`.
     ///
-    /// **IE:** `ubuntu`
+    /// **E.g.:** `ubuntu`
     pub id:                 String,
+
     /// The name of this release, without the version string.
     ///
-    /// **IE:** `Ubuntu`
+    /// **E.g.:** `Ubuntu`
     pub name:               String,
+
     /// The name of this release, with th eversion stirng.
     ///
-    /// **IE:** `Ubuntu 18.04 LTS`
+    /// **E.g.:** `Ubuntu 18.04 LTS`
     pub pretty_name:        String,
+
     /// The URL describing this OS's privacy policy.
     pub privacy_policy_url: String,
+
     /// The URL for seeking support with this OS release.
     pub support_url:        String,
+
     /// The codename of this version.
     ///
-    /// **IE:** `bionic`
+    /// **E.g.:** `bionic`
     pub version_codename:   String,
-    /// The version of this OS release, with additional details about the release.
-    ///
-    /// **IE:** `18.04 LTS (Bionic Beaver)`
-    pub version_id:         String,
+
     /// The version of this OS release.
     ///
-    /// **IE:** `18.04`
+    /// **E.g.:** `18.04`
+    pub version_id:         String,
+
+    /// The version of this OS release, with additional details about the release.
+    ///
+    /// **E.g.:** `18.04 LTS (Bionic Beaver)`
     pub version:            String,
+
     /// Additional keys not covered by the API.
     pub extra:              BTreeMap<String, String>
 }
